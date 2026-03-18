@@ -159,32 +159,37 @@ async function loadWeather() {
 
 function updateBackgroundMode() {
   const hour = new Date().getHours();
-
   const video = document.getElementById("bgVideo");
   const image = document.getElementById("bgImage");
 
+  if (!video || !image) return;
+
   if (hour >= 0 && hour < 7) {
-    video.classList.add("hidden");
     image.classList.remove("hidden");
+    video.classList.add("hidden");
     video.pause();
   } else {
     image.classList.add("hidden");
     video.classList.remove("hidden");
 
-    video.play().then(() => {
-      video.playbackRate = 0.5; // 👈 HIER wichtig
-    }).catch(() => {});
+    video.playbackRate = 0.5;
+    const playPromise = video.play();
+    if (playPromise !== undefined) {
+      playPromise.catch((err) => {
+        console.error("Video konnte nicht gestartet werden:", err);
+      });
+    }
   }
 }
 
 updateClockAndDate();
 updateGreeting();
 loadWeather();
-updateBackgroundMode();
 
 setInterval(updateClockAndDate, 1000);
 setInterval(updateGreeting, 60000);
 setInterval(loadWeather, 30 * 60 * 1000);
+updateBackgroundMode();
 setInterval(updateBackgroundMode, 5 * 60 * 1000);
 
 document.addEventListener("DOMContentLoaded", () => {
