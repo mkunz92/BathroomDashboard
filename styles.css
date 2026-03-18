@@ -111,7 +111,7 @@ body {
   font-weight: 300;
   letter-spacing: -0.08em;
   color: var(--text);
-  text-shadow: var(--shadow-strong);
+  text-shadow: none;
 }
 
 .date {
