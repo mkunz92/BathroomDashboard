@@ -1,75 +1,21 @@
 <!DOCTYPE html>
 <html lang="de">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#000000" />
-    <title>Bad Dashboard</title>
-    <link rel="preconnect" href="https://api.openweathermap.org" />
-    <link rel="preconnect" href="https://openweathermap.org" />
-    <link rel="stylesheet" href="./styles.css" />
-  </head>
-  <body>
-    <div class="background-layer">
-      <div class="background-gradient"></div>
-      <video class="background-video" id="backgroundVideo" autoplay muted loop playsinline></video>
-      <div class="background-overlay"></div>
-    </div>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
 
-    <main class="dashboard">
-      <section class="clock-panel">
-        <div class="location-label">Arnstadt · Plauesche Straße</div>
+<div class="clock-container">
+  <div class="greeting" id="greeting"></div>
+  <div class="clock" id="clock"></div>
+</div>
 
-        <div class="clock-card glass-card">
-          <p class="greeting" id="greeting">Guten Tag</p>
-          <div class="digital-time" id="digitalTime">00:00</div>
-          <p class="date-line" id="dateLine">--</p>
-        </div>
+<div class="weather" id="weather"></div>
 
-        <div class="status-line" id="statusLine">Lade Wetterdaten …</div>
-      </section>
-
-      <section class="weather-panel glass-card">
-        <div class="panel-header">
-          <div>
-            <p class="eyebrow">5-Tage-Vorschau</p>
-            <h1>Wetter</h1>
-          </div>
-          <div class="refresh-pill">Update alle 30 Minuten</div>
-        </div>
-
-        <div class="weather-grid" id="weatherGrid" aria-live="polite"></div>
-      </section>
-    </main>
-
-    <template id="weatherCardTemplate">
-      <article class="weather-card">
-        <div class="weather-visual">
-          <div class="weather-aura"></div>
-          <img class="weather-icon" alt="" />
-        </div>
-
-        <div class="weather-copy">
-          <div class="weather-card-top">
-            <div>
-              <p class="weekday"></p>
-              <p class="date"></p>
-            </div>
-          </div>
-          <p class="weather-desc"></p>
-          <div class="temps">
-            <span class="temp-max"></span>
-            <span class="temp-min"></span>
-          </div>
-          <div class="weather-meta">
-            <span class="precip"></span>
-            <span class="wind"></span>
-          </div>
-        </div>
-      </article>
-    </template>
-
-    <script src="./config.js"></script>
-    <script src="./app.js"></script>
-  </body>
+<script src="config.js"></script>
+<script src="app.js"></script>
+</body>
 </html>
