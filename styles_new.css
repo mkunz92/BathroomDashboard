@@ -369,3 +369,7 @@ body.night-mode .weather-error {
   color: #ffffff !important;
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.45) !important;
 }
+
+body.day-mode * {
+  color: #000000 !important;
+}
