@@ -336,4 +336,36 @@ body {
     height: 70px;
   }
 }
+body.day-mode .greeting,
+body.day-mode .clock,
+body.day-mode .date,
+body.day-mode .location,
+body.day-mode .weather-kicker,
+body.day-mode .weather-header h1,
+body.day-mode .weather-day,
+body.day-mode .weather-date,
+body.day-mode .weather-desc,
+body.day-mode .temp-max,
+body.day-mode .temp-min,
+body.day-mode .weather-meta,
+body.day-mode .weather-error {
+  color: #000000 !important;
+  text-shadow: 0 2px 10px rgba(255, 255, 255, 0.75) !important;
+}
 
+body.night-mode .greeting,
+body.night-mode .clock,
+body.night-mode .date,
+body.night-mode .location,
+body.night-mode .weather-kicker,
+body.night-mode .weather-header h1,
+body.night-mode .weather-day,
+body.night-mode .weather-date,
+body.night-mode .weather-desc,
+body.night-mode .temp-max,
+body.night-mode .temp-min,
+body.night-mode .weather-meta,
+body.night-mode .weather-error {
+  color: #ffffff !important;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.45) !important;
+}
