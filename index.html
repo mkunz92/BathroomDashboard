@@ -1,21 +1,39 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dashboard</title>
-<link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arnstadt Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <div class="bg-image" aria-hidden="true"></div>
+  <div class="bg-overlay" aria-hidden="true"></div>
 
-<div class="clock-container">
-  <div class="greeting" id="greeting"></div>
-  <div class="clock" id="clock"></div>
-</div>
+  <main class="layout">
+    <section class="left-panel">
+      <div class="clock-card">
+        <div id="greeting" class="greeting">Guten Abend</div>
+        <div id="clock" class="clock">18:44</div>
+        <div id="date" class="date">Mittwoch, 18.03.2026</div>
+        <div class="location">Arnstadt · Plauesche Straße</div>
+      </div>
+    </section>
 
-<div class="weather" id="weather"></div>
+    <section class="right-panel">
+      <div class="weather-header">
+        <div class="weather-kicker">5-Tage-Vorschau</div>
+        <h1>Wetter</h1>
+      </div>
 
-<script src="config.js"></script>
-<script src="app.js"></script>
+      <div id="weather" class="weather-grid" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
