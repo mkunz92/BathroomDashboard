@@ -164,17 +164,16 @@ function updateBackgroundMode() {
   const image = document.getElementById("bgImage");
 
   if (hour >= 0 && hour < 7) {
-    // 🌙 Nacht → Bild
     video.classList.add("hidden");
     image.classList.remove("hidden");
-
     video.pause();
   } else {
-    // 🌞 Tag → Video
     image.classList.add("hidden");
     video.classList.remove("hidden");
 
-    video.play().catch(() => {});
+    video.play().then(() => {
+      video.playbackRate = 0.5; // 👈 HIER wichtig
+    }).catch(() => {});
   }
 }
 
