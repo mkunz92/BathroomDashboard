@@ -98,7 +98,7 @@ body {
 }
 
 .greeting {
-  font-size: clamp(22px, 2.2vw, 34px);
+  font-size: clamp(28px, 3vw, 44px);
   font-weight: 700;
   color: var(--text);
   letter-spacing: -0.03em;
@@ -107,25 +107,25 @@ body {
 
 .clock {
   margin-top: 8px;
-  font-size: clamp(84px, 9vw, 132px);
-  line-height: 0.94;
+  font-size: clamp(120px, 14vw, 200px);
+  line-height: 0.9;
   font-weight: 300;
-  letter-spacing: -0.075em;
+  letter-spacing: -0.08em;
   color: var(--text);
   text-shadow: var(--shadow-strong);
 }
 
 .date {
-  margin-top: 18px;
-  font-size: clamp(20px, 1.7vw, 30px);
+  margin-top: 20px;
+  font-size: clamp(24px, 2.2vw, 36px);
   font-weight: 600;
   color: var(--muted);
   text-shadow: var(--shadow-soft);
 }
 
 .location {
-  margin-top: 12px;
-  font-size: clamp(17px, 1.35vw, 23px);
+  margin-top: 14px;
+  font-size: clamp(20px, 1.8vw, 30px);
   font-weight: 500;
   color: var(--soft);
   text-shadow: var(--shadow-soft);
@@ -223,7 +223,7 @@ body {
 }
 
 .weather-day {
-  font-size: 17px;
+  font-size: 22px;
   font-weight: 800;
   text-transform: capitalize;
   line-height: 1.05;
@@ -233,7 +233,7 @@ body {
 
 .weather-date {
   margin-top: 4px;
-  font-size: 12px;
+  font-size: 16px;
   color: var(--muted);
   text-shadow: var(--shadow-soft);
 }
@@ -247,15 +247,15 @@ body {
 }
 
 .weather-icon {
-  width: 78px;
-  height: 78px;
+  width: 100px;
+  height: 100px;
   object-fit: contain;
   filter: drop-shadow(0 0 14px rgba(255,255,255,0.26)) drop-shadow(0 2px 10px rgba(0,0,0,0.22));
 }
 
 .weather-desc {
   margin-top: 14px;
-  font-size: 15px;
+  font-size: 18px;
   line-height: 1.2;
   min-height: 38px;
   font-weight: 600;
@@ -271,7 +271,7 @@ body {
 }
 
 .temp-max {
-  font-size: 36px;
+  font-size: 48px;
   line-height: 1;
   font-weight: 800;
   letter-spacing: -0.04em;
@@ -280,7 +280,7 @@ body {
 }
 
 .temp-min {
-  font-size: 18px;
+  font-size: 24px;
   color: var(--muted);
   text-shadow: var(--shadow-soft);
 }
@@ -289,7 +289,7 @@ body {
   display: grid;
   gap: 5px;
   margin-top: 24px;
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 500;
   color: var(--soft);
   text-shadow: var(--shadow-soft);
@@ -320,7 +320,7 @@ body {
   }
 
   .weather-grid {
-    gap: 12px;
+    gap: 26px;
   }
 
   .weather-card {
