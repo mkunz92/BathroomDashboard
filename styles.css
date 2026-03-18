@@ -125,7 +125,7 @@ body {
 .location {
   margin-top: 14px;
   font-size: clamp(20px, 1.8vw, 30px);
-  font-weight: 500;
+  font-weight: 700;
   color: var(--soft);
   text-shadow: var(--shadow-soft);
 }
@@ -234,6 +234,7 @@ body {
 .weather-date {
   margin-top: 4px;
   font-size: 16px;
+  font-weight: 600;
   color: var(--muted);
   text-shadow: var(--shadow-soft);
 }
@@ -281,6 +282,7 @@ body {
 
 .temp-min {
   font-size: 24px;
+  font-weight: 600;
   color: var(--muted);
   text-shadow: var(--shadow-soft);
 }
@@ -290,7 +292,7 @@ body {
   gap: 5px;
   margin-top: 24px;
   font-size: 15px;
-  font-weight: 500;
+  font-weight: 600;
   color: var(--soft);
   text-shadow: var(--shadow-soft);
 }
