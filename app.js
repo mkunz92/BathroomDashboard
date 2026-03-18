@@ -186,3 +186,11 @@ setInterval(updateClockAndDate, 1000);
 setInterval(updateGreeting, 60000);
 setInterval(loadWeather, 30 * 60 * 1000);
 setInterval(updateBackgroundMode, 5 * 60 * 1000);
+
+document.addEventListener("DOMContentLoaded", () => {
+  const video = document.getElementById("bgVideo");
+
+  if (video) {
+    video.playbackRate = 0.5; // 0.5 = halb so schnell
+  }
+});
