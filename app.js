@@ -104,12 +104,23 @@
     return `${Math.round(value)}°`;
   }
 
+  function getWeatherTheme(iconCode = "") {
+    const code = String(iconCode);
+    if (code.startsWith("11")) return "storm";
+    if (code.startsWith("13")) return "snow";
+    if (code.startsWith("09") || code.startsWith("10")) return "rain";
+    if (code.startsWith("01")) return "clear";
+    if (code.startsWith("02") || code.startsWith("03") || code.startsWith("04")) return "clouds";
+    return "default";
+  }
+
   function renderWeather(days) {
     weatherGridEl.innerHTML = "";
 
     days.forEach((day) => {
       const card = template.content.firstElementChild.cloneNode(true);
       const dateObj = new Date(`${day.dateKey}T12:00:00`);
+      card.dataset.weather = getWeatherTheme(day.icon);
 
       card.querySelector(".weekday").textContent = dateObj.toLocaleDateString(locale, {
         weekday: "long"
