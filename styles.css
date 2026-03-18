@@ -107,7 +107,7 @@ body {
 
 .clock {
   margin-top: 8px;
-  font-size: 110px;
+  font-size: 120px;
   line-height: 0.9;
   font-weight: 300;
   letter-spacing: -0.08em;
@@ -238,6 +238,7 @@ body {
   font-weight: 600;
   color: var(--muted);
   text-shadow: var(--shadow-soft);
+  text-align: center;
 }
 
 .weather-icon-wrap {
