@@ -19,7 +19,6 @@ body.day-mode {
   --shadow-soft: 0 2px 14px rgba(255, 255, 255, 0.28);
 }
 
-/* NACHT = helle Schrift für dunkles Bild */
 body.night-mode {
   --text: #f8fbff;
   --muted: rgba(248, 251, 255, 0.88);
@@ -335,20 +334,4 @@ body {
     width: 70px;
     height: 70px;
   }
-}
-body.day-mode .greeting,
-body.day-mode .clock,
-body.day-mode .date,
-body.day-mode .location,
-body.day-mode .weather-kicker,
-body.day-mode .weather-header h1,
-body.day-mode .weather-day,
-body.day-mode .weather-date,
-body.day-mode .weather-desc,
-body.day-mode .temp-max,
-body.day-mode .temp-min,
-body.day-mode .weather-meta,
-body.day-mode .weather-error {
-  color: #000000 !important;
-  text-shadow: 0 2px 10px rgba(255,255,255,0.85) !important;
 }
