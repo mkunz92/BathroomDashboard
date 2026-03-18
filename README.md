@@ -1,17 +1,19 @@
-# Bad Dashboard fuer Netlify
+# Bad Dashboard fuer GitHub Pages oder Netlify
 
-Dieses Projekt ist eine statische Netlify-Seite fuer ein 8.7-Zoll-Tablet im Querformat.
+Dieses Projekt ist fuer ein 8.7-Zoll-Tablet im Querformat optimiert.
 
 Enthalten:
-- tiefschwarzer Hintergrund fuer moeglichst geringe OLED-Stromaufnahme
-- linkes Drittel: Analoguhr, deutsche Uhrzeit, adaptiver deutscher Gruss
-- rechtes Zweidrittel: 5-Tage-Wettervorschau
+- freundlicher, heller Hintergrund mit sanfter Bewegung
+- optionales eigenes Hintergrundvideo
+- mittige digitale Uhr im Glas-Look
+- deutscher Gruss und deutsches Datum
+- kompakte 5-Tage-Wetterkarten mit Animation nur im oberen Bereich
 - Wetterdaten mit OpenWeather
 - automatisches Wetter-Update alle 30 Minuten
 
 ## 1) API-Key eintragen
 
-Oeffne die Datei `config.js` und ersetze:
+Oeffne `config.js` und ersetze:
 
 ```js
 OPENWEATHER_API_KEY: "PASTE_YOUR_OPENWEATHER_API_KEY_HERE"
@@ -19,39 +21,33 @@ OPENWEATHER_API_KEY: "PASTE_YOUR_OPENWEATHER_API_KEY_HERE"
 
 mit deinem echten OpenWeather API-Key.
 
-## 2) Deploy zu Netlify
+## 2) Optional: bewegtes Hintergrundvideo
 
-### Variante A: Drag and Drop
-1. Die Projektdateien zippen oder den Ordner bereithalten.
-2. Bei Netlify einloggen.
-3. "Add new site" -> "Deploy manually".
-4. Den kompletten Projektordner oder eine ZIP hochladen.
+Du kannst ein eigenes Video verwenden, zum Beispiel Strand mit Wellengang.
 
-### Variante B: Git
-1. Projekt in ein Git-Repository legen.
-2. Repository mit Netlify verbinden.
-3. Publish Directory ist bereits per `netlify.toml` auf `.` gesetzt.
+Vorgehen:
+1. Lege einen Ordner `assets` an.
+2. Kopiere dein Video hinein, zum Beispiel `assets/strand.mp4`.
+3. Trage in `config.js` ein:
 
-## 3) Dateien
+```js
+BACKGROUND_VIDEO_PATH: "./assets/strand.mp4"
+```
+
+Wenn `BACKGROUND_VIDEO_PATH` leer bleibt, nutzt das Dashboard automatisch den animierten Farbverlauf.
+
+## 3) Deploy zu GitHub Pages
+
+1. Dateien ins Repository hochladen.
+2. In GitHub: `Settings -> Pages`.
+3. `Deploy from a branch` waehlen.
+4. Branch `main` und Ordner `/ (root)` waehlen.
+5. Speichern.
+
+## 4) Dateien
 
 - `index.html` - Struktur
 - `styles.css` - Design und Layout
-- `app.js` - Uhr, Begruessung, Wetterlogik
-- `config.js` - dein API-Key und Orteinstellungen
-- `netlify.toml` - Netlify-Konfiguration
-
-## 4) Wichtige Hinweise
-
-- Das Projekt versucht zuerst OpenWeather-Geocoding mit `Plauesche Straße, Arnstadt, DE`.
-- Falls OpenWeather dafuer nichts Eindeutiges liefert, wird auf `Arnstadt, DE` zurueckgefallen.
-- Den sichtbaren Ortsnamen kannst du in `config.js` ueber `DISPLAY_LOCATION_LABEL` aendern.
-- Wenn du spaeter smarte Steckdosen einbauen willst, kannst du in `app.js` oder einer zusaetzlichen Datei Buttons und API-Aufrufe ergaenzen.
-
-## 5) Optional fuer das Tablet
-
-Fuer den Kiosk-Betrieb auf dem Tablet:
-- Fully Kiosk Browser nutzen
-- URL der Netlify-Seite als Startseite setzen
-- Bildschirmrotation sperren
-- Auto-Sleep deaktivieren
-- Helligkeit reduzieren
+- `app.js` - Uhr, Begruessung, Wetterlogik, optionales Hintergrundvideo
+- `config.js` - API-Key, Ort und optionales Video
+- `README.md` - Hinweise

@@ -9,10 +9,8 @@
   const statusLineEl = document.getElementById("statusLine");
   const weatherGridEl = document.getElementById("weatherGrid");
   const template = document.getElementById("weatherCardTemplate");
-  const hourHand = document.getElementById("hourHand");
-  const minuteHand = document.getElementById("minuteHand");
-  const secondHand = document.getElementById("secondHand");
   const locationLabel = document.querySelector(".location-label");
+  const backgroundVideo = document.getElementById("backgroundVideo");
 
   locationLabel.textContent = config.DISPLAY_LOCATION_LABEL || "Arnstadt · Deutschland";
 
@@ -32,22 +30,11 @@
   function updateClock() {
     const berlinNow = getBerlinNow();
     const hours = berlinNow.getHours();
-    const minutes = berlinNow.getMinutes();
-    const seconds = berlinNow.getSeconds();
-
-    const hourRotation = ((hours % 12) + minutes / 60 + seconds / 3600) * 30;
-    const minuteRotation = (minutes + seconds / 60) * 6;
-    const secondRotation = seconds * 6;
-
-    hourHand.style.transform = `translateX(-50%) rotate(${hourRotation}deg)`;
-    minuteHand.style.transform = `translateX(-50%) rotate(${minuteRotation}deg)`;
-    secondHand.style.transform = `translateX(-50%) rotate(${secondRotation}deg)`;
 
     digitalTimeEl.textContent = berlinNow.toLocaleTimeString(locale, {
       timeZone,
       hour: "2-digit",
-      minute: "2-digit",
-      second: "2-digit"
+      minute: "2-digit"
     });
 
     dateLineEl.textContent = berlinNow.toLocaleDateString(locale, {
@@ -102,6 +89,17 @@
 
   function formatTemp(value) {
     return `${Math.round(value)}°`;
+  }
+
+
+  function setupBackgroundVideo() {
+    const videoPath = config.BACKGROUND_VIDEO_PATH;
+    if (!backgroundVideo || !videoPath) return;
+
+    backgroundVideo.src = videoPath;
+    backgroundVideo.addEventListener("canplay", () => {
+      backgroundVideo.classList.add("is-ready");
+    }, { once: true });
   }
 
   function getWeatherTheme(iconCode = "") {
@@ -237,6 +235,7 @@
     }
   }
 
+  setupBackgroundVideo();
   updateClock();
   setInterval(updateClock, 1000);
 

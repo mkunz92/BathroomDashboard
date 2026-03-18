@@ -10,40 +10,26 @@
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
+    <div class="background-layer">
+      <div class="background-gradient"></div>
+      <video class="background-video" id="backgroundVideo" autoplay muted loop playsinline></video>
+      <div class="background-overlay"></div>
+    </div>
+
     <main class="dashboard">
       <section class="clock-panel">
         <div class="location-label">Arnstadt · Plauesche Straße</div>
-        <div class="greeting-block">
+
+        <div class="clock-card glass-card">
           <p class="greeting" id="greeting">Guten Tag</p>
+          <div class="digital-time" id="digitalTime">00:00</div>
           <p class="date-line" id="dateLine">--</p>
         </div>
 
-        <div class="analog-clock" aria-label="Analoguhr">
-          <div class="clock-face">
-            <div class="tick tick-12"></div>
-            <div class="tick tick-1"></div>
-            <div class="tick tick-2"></div>
-            <div class="tick tick-3"></div>
-            <div class="tick tick-4"></div>
-            <div class="tick tick-5"></div>
-            <div class="tick tick-6"></div>
-            <div class="tick tick-7"></div>
-            <div class="tick tick-8"></div>
-            <div class="tick tick-9"></div>
-            <div class="tick tick-10"></div>
-            <div class="tick tick-11"></div>
-            <div class="hand hour-hand" id="hourHand"></div>
-            <div class="hand minute-hand" id="minuteHand"></div>
-            <div class="hand second-hand" id="secondHand"></div>
-            <div class="clock-center"></div>
-          </div>
-        </div>
-
-        <div class="digital-time" id="digitalTime">00:00:00</div>
         <div class="status-line" id="statusLine">Lade Wetterdaten …</div>
       </section>
 
-      <section class="weather-panel">
+      <section class="weather-panel glass-card">
         <div class="panel-header">
           <div>
             <p class="eyebrow">5-Tage-Vorschau</p>
@@ -58,21 +44,27 @@
 
     <template id="weatherCardTemplate">
       <article class="weather-card">
-        <div class="weather-card-top">
-          <div>
-            <p class="weekday"></p>
-            <p class="date"></p>
-          </div>
+        <div class="weather-visual">
+          <div class="weather-aura"></div>
           <img class="weather-icon" alt="" />
         </div>
-        <p class="weather-desc"></p>
-        <div class="temps">
-          <span class="temp-max"></span>
-          <span class="temp-min"></span>
-        </div>
-        <div class="weather-meta">
-          <span class="precip"></span>
-          <span class="wind"></span>
+
+        <div class="weather-copy">
+          <div class="weather-card-top">
+            <div>
+              <p class="weekday"></p>
+              <p class="date"></p>
+            </div>
+          </div>
+          <p class="weather-desc"></p>
+          <div class="temps">
+            <span class="temp-max"></span>
+            <span class="temp-min"></span>
+          </div>
+          <div class="weather-meta">
+            <span class="precip"></span>
+            <span class="wind"></span>
+          </div>
         </div>
       </article>
     </template>
