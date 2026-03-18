@@ -107,7 +107,7 @@ body {
 
 .clock {
   margin-top: 8px;
-  font-size: clamp(120px, 14vw, 200px);
+  font-size: clamp(110px, 14vw, 180px);
   line-height: 0.9;
   font-weight: 300;
   letter-spacing: -0.08em;
