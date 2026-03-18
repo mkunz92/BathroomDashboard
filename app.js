@@ -157,10 +157,33 @@ async function loadWeather() {
   }
 }
 
+function updateBackgroundMode() {
+  const hour = new Date().getHours();
+
+  const video = document.getElementById("bgVideo");
+  const image = document.getElementById("bgImage");
+
+  if (hour >= 0 && hour < 7) {
+    // 🌙 Nacht → Bild
+    video.classList.add("hidden");
+    image.classList.remove("hidden");
+
+    video.pause();
+  } else {
+    // 🌞 Tag → Video
+    image.classList.add("hidden");
+    video.classList.remove("hidden");
+
+    video.play().catch(() => {});
+  }
+}
+
 updateClockAndDate();
 updateGreeting();
 loadWeather();
+updateBackgroundMode();
 
 setInterval(updateClockAndDate, 1000);
 setInterval(updateGreeting, 60000);
 setInterval(loadWeather, 30 * 60 * 1000);
+setInterval(updateBackgroundMode, 5 * 60 * 1000);
