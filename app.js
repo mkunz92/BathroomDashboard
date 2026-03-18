@@ -164,18 +164,31 @@ function updateBackgroundMode() {
 
   if (!video || !image) return;
 
+  video.style.transition = "opacity 1.5s ease";
+
   if (hour >= 0 && hour < 7) {
     image.classList.remove("hidden");
-    video.classList.add("hidden");
-    video.pause();
+
+    video.style.opacity = "0";
+
+    setTimeout(() => {
+      video.classList.add("hidden");
+      video.pause();
+    }, 1500);
   } else {
     image.classList.add("hidden");
     video.classList.remove("hidden");
 
+    video.style.opacity = "0";
     video.playbackRate = 0.5;
+
     const playPromise = video.play();
     if (playPromise !== undefined) {
-      playPromise.catch((err) => {
+      playPromise.then(() => {
+        setTimeout(() => {
+          video.style.opacity = "1";
+        }, 50);
+      }).catch((err) => {
         console.error("Video konnte nicht gestartet werden:", err);
       });
     }
