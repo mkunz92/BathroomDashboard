@@ -33,6 +33,10 @@ html, body {
   height: 100%;
   margin: 0;
 }
+body,
+body * {
+  color: #000 !important;
+}
 
 body {
   overflow: hidden;
