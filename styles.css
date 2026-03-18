@@ -86,7 +86,7 @@ body {
 
 .left-panel {
   display: flex;
-  align-items: center;
+  align-items: left;
   justify-content: center;
   padding-right: 20px;
 }
