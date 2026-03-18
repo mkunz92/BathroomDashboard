@@ -79,7 +79,6 @@ function groupForecastByDay(list) {
 
 async function geocodeLocation() {
   const apiKey = CONFIG.OPENWEATHER_API_KEY;
-
   const queries = [
     "Plauesche Straße, Arnstadt, DE",
     "Arnstadt, DE"
@@ -107,10 +106,11 @@ function renderWeather(days) {
       <div class="weather-anim"></div>
 
       <div class="weather-top">
-        <div>
-          <div class="weather-day">${day.weekday}</div>
-          <div class="weather-date">${day.date}</div>
-        </div>
+        <div class="weather-day">${day.weekday}</div>
+        <div class="weather-date">${day.date}</div>
+      </div>
+
+      <div class="weather-icon-wrap">
         <img class="weather-icon" src="${iconUrl(day.icon)}" alt="${day.description}">
       </div>
 
