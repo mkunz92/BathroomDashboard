@@ -218,5 +218,3 @@ document.addEventListener("DOMContentLoaded", () => {
     video.playbackRate = 0.5; // 0.5 = halb so schnell
   }
 });
-
-document.body.style.background = "lime";
