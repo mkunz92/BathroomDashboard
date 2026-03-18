@@ -167,6 +167,10 @@ function updateBackgroundMode() {
   video.style.transition = "opacity 1.5s ease";
 
   if (hour >= 0 && hour < 7) {
+    // 🌙 Nacht
+    document.body.classList.remove("day-mode");
+    document.body.classList.add("night-mode");
+
     image.classList.remove("hidden");
 
     video.style.opacity = "0";
@@ -175,7 +179,12 @@ function updateBackgroundMode() {
       video.classList.add("hidden");
       video.pause();
     }, 1500);
+
   } else {
+    // 🌞 Tag
+    document.body.classList.remove("night-mode");
+    document.body.classList.add("day-mode");
+
     image.classList.add("hidden");
     video.classList.remove("hidden");
 
